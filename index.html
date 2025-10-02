@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D & R Body Shop - Auto Body Repair in Shawnee, OK</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1a5490;
+            --secondary-color: #2c7cc1;
+            --accent-color: #ff6b35;
+            --dark-bg: #1a1a2e;
+            --light-bg: #f8f9fa;
+            --text-dark: #2c3e50;
+            --text-light: #ffffff;
+            --border-color: #e0e0e0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        /* Header Styles */
+        .top-bar {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            padding: 12px 0;
+            text-align: center;
+        }
+
+        .top-bar a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .top-bar a:hover {
+            color: var(--accent-color);
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--text-light);
+            padding: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .header-content h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header-content p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--text-light);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        nav ul li {
+            margin: 0;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 1rem 1.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 0;
+        }
+
+        section:nth-child(even) {
+            background-color: var(--light-bg);
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-color);
+        }
+
+        /* About Section */
+        .about-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: var(--text-light);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        .service-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .service-card p {
+            color: #666;
+        }
+
+        /* Hours Section */
+        .hours-content {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--text-light);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .hours-table {
+            width: 100%;
+        }
+
+        .hours-table tr {
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hours-table tr:last-child {
+            border-bottom: none;
+        }
+
+        .hours-table td {
+            padding: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .hours-table td:first-child {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .hours-table td:last-child {
+            text-align: right;
+            color: #555;
+        }
+
+        .hours-table .closed {
+            color: #999;
+        }
+
+        /* Reviews Section */
+        .reviews-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .review-card {
+            background: var(--text-light);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.8rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .reviewer-name {
+            font-weight: 700;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+        }
+
+        .stars {
+            color: #ffc107;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+        }
+
+        .review-time {
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        .review-body {
+            color: #555;
+            line-height: 1.6;
+            margin-top: 0.5rem;
+        }
+
+        .show-more-btn {
+            display: block;
+            margin: 2rem auto;
+            padding: 1rem 3rem;
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .show-more-btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Contact Form */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .contact-form {
+            background: var(--text-light);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid var(--border-color);
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background-color: var(--accent-color);
+            color: var(--text-light);
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background-color: #e55a2b;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        /* Contact Info */
+        .contact-info {
+            background: var(--text-light);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .contact-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .info-item {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background-color: var(--light-bg);
+            border-radius: 5px;
+        }
+
+        .info-item strong {
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-item a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        .info-item a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Map Section */
+        .map-container {
+            margin-top: 2rem;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 450px;
+            border: none;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2rem;
+            }
+
+            .header-content p {
+                font-size: 1rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li a {
+                padding: 0.8rem;
+            }
+
+            section h2 {
+                font-size: 2rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Square Payment Form Placeholder */
+        #square-payment-form {
+            margin-top: 2rem;
+            padding: 2rem;
+            background: var(--text-light);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        #square-payment-form h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar with Phone -->
+    <div class="top-bar">
+        <a href="tel:+14058789700">📞 Call Us Now: (405) 878-9700</a>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <h1>D & R Body Shop</h1>
+            <p>Quality Auto Body Repair in Shawnee, Oklahoma</p>
+            <p>Over 30 Years of Trusted Service</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#hours">Hours</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#location">Location</a></li>
+        </ul>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About D & R Body Shop</h2>
+            <div class="about-content">
+                <p>Welcome to D & R Body Shop, Shawnee's trusted auto body repair specialist for over 30 years. We're a family-owned business dedicated to providing exceptional collision repair services with honesty, integrity, and expert craftsmanship. Our experienced team treats every vehicle like it's our own, ensuring quality repairs at fair prices. From minor scratches to major collision damage, we've got you covered!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>🚗 Collision Repair</h3>
+                    <p>Expert collision repair services to restore your vehicle to pre-accident condition with precision and care.</p>
+                </div>
+                <div class="service-card">
+                    <h3>🎨 Paint & Refinishing</h3>
+                    <p>Professional paint matching and refinishing that looks factory-fresh and blends seamlessly.</p>
+                </div>
+                <div class="service-card">
+                    <h3>🔧 Dent & Scratch Repair</h3>
+                    <p>Quick and affordable dent and scratch removal to keep your vehicle looking its best.</p>
+                </div>
+                <div class="service-card">
+                    <h3>🛡️ Bumper Repair</h3>
+                    <p>Expert bumper repair and replacement services that restore safety and appearance.</p>
+                </div>
+                <div class="service-card">
+                    <h3>📋 Insurance Claims</h3>
+                    <p>We work with all insurance companies to make your claim process smooth and hassle-free.</p>
+                </div>
+                <div class="service-card">
+                    <h3>⚡ Fast Service</h3>
+                    <p>Many repairs completed in 24 hours or less without compromising quality.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hours Section -->
+    <section id="hours">
+        <div class="container">
+            <h2>Business Hours</h2>
+            <div class="hours-content">
+                <table class="hours-table">
+                    <tr>
+                        <td>Monday</td>
+                        <td>8:00 AM – 5:00 PM</td>
+                    </tr>
+                    <tr>
+                        <td>Tuesday</td>
+                        <td>8:00 AM – 5:00 PM</td>
+                    </tr>
+                    <tr>
+                        <td>Wednesday</td>
+                        <td>8:00 AM – 5:00 PM</td>
+                    </tr>
+                    <tr>
+                        <td>Thursday</td>
+                        <td>8:00 AM – 5:00 PM</td>
+                    </tr>
+                    <tr>
+                        <td>Friday</td>
+                        <td>8:00 AM – 5:00 PM</td>
+                    </tr>
+                    <tr>
+                        <td>Saturday</td>
+                        <td class="closed">Closed</td>
+                    </tr>
+                    <tr>
+                        <td>Sunday</td>
+                        <td class="closed">Closed</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews">
+        <div class="container">
+            <h2>Customer Reviews</h2>
+            <div class="reviews-container">
+                <!-- Initial 6 reviews -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <span class="reviewer-name">Alexee Martinez</span>
+                        <span class="stars">★★★★★</span>
+                    </div>
+                    <div class="review-time">2 months ago</div>
+                    <div class="review-body">The sweetest souls ever! Got my car in so fast and had it fixed within a couple hours. Highly recommend! Super professional and gives their honest feedback.</div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <span class="reviewer-name">Mr B</span>
+                        <span class="stars">★★★★★</span>
+                    </div>
+                    <div class="review-time">3 months ago</div>
+                    <div class="review-body">They did a very good job on my truck and was actually surprised by what they charged. It was below what I was expecting. Would recommend them.</div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <span class="reviewer-name">John Hudson</span>
+                        <span class="stars">★★★★★</span>
+                    </div>
+                    <div class="review-time">6 months ago</div>
+                    <div class="review-body">Great work and a great family. They've been taking care of our family for over 30 years. wouldn't dream of going anywhere else!</div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <span class="reviewer-name">Ricky Lewis</span>
+                        <span class="stars">★★★★★</span>
+                    </div>
+                    <div class="review-time">2 years ago</div>
+                    <div class="review-body">Very professional, they took the time to look at my vehicle when I just showed up at their shop. Gave me a quick estimate. I dropped it off and the repair was awesome and price was reasonable. Going to bring all my scratch and dent repairs to them from now on.</div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <span class="reviewer-name">Bryan Hanes</span>
+                        <span class="stars">★★★★★</span>
+                    </div>
+                    <div class="review-time">a year ago</div>
+                    <div class="review-body">Excellent and competent service. I have taken my vehicles and sent friends to D&R several (more than 6) times over the past 10 years. They have never failed to deliver as promised and frequently a "little bit more".</div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <span class="reviewer-name">Dennis Nelms</span>
+                        <span class="stars">★★★★★</span>
+                    </div>
+                    <div class="review-time">7 years ago</div>
+                    <div class="review-body">Over 3 years ago I was reader ended. I went to D&R based off a family recommendation. I'm glad I did. Not only is the work great (stil can't tell the bumper was replaced or that its not factory painted), but when the other persons insurance…</div>
+                </div>
+
+                <!-- Hidden reviews (shown after clicking button) -->
+                <div class="review-card hidden" data-group="1">
+                    <div class="review-header">
+                        <span class="reviewer-name">James Hileman</span>
+                        <span class="stars">★★★★★</span>
+                    </div>
+                    <div class="review-time">Edited 9 months ago</div>
+                    <div class="review-body">Excellent craftsmanship and customer friendly. Would recommend to anyone needing their car put back together.</div>
+                </div>
+
+                <div class="review-card hidden" data-group="1">
+                    <div class="review-header">
+                        <span class="reviewer-name">Brian Johnson</span>
+                        <span class="stars">★★★★★</span>
+                    </div>
+                    <div class="review-time">5 years ago</div>
+                    <div class="review-body">Dennis is a great guy! I took my nieces car in for some work and they got right on it and had it out in 24 hours. As always thanks for the quality and expertise work Dennis!</div>
+                </div>
+
+                <div class="review-card hidden" data-group="1">
+                    <div class="review-header">
+                        <span class="reviewer-name">Chris Collins</span>
+                        <span class="stars">★★★★★</span>
+                    </div>
+                    <div class="review-time">3 years ago</div>
+                    <div class="review-body">They were great! We can't even tell our car was in a wreck. We will definitely use D &R again.</div>
+                </div>
+
+                <div class="review-card hidden" data-group="1">
+                    <div class="review-header">
+                        <span class="reviewer-name">Chance McCoy</span>
+                        <span class="stars">★★★★★</span>
+                    </div>
+                    <div class="review-time">8 years ago</div>
+                    <div class="review-body">Shop does awesome work. Had my 300 in and out in a day, and came in WAAAAAAY cheaper than other local body shops. Highly recommend the crew over at D&R</div>
+                </div>
+
+                <div class="review-card hidden" data-group="1">
+                    <div class="review-header">
+                        <span class="reviewer-name">Nate Monholland</span>
+                        <span class="stars">★★★★★</span>
+                    </div>
+                    <div class="review-time">5 years ago</div>
+                    <div class="review-body">This place has worked on two of my cars and i got excellent service both times. Best body shop around.</div>
+                </div>
+
+                <div class="review-card hidden" data-group="1">
+                    <div class="review-header">
+                        <span class="reviewer-name">Steve Mitchell</span>
+                        <span class="stars">★★★★★</span>
+                    </div>
+                    <div class="review-time">2 years ago</div>
+                    <div class="review-body">Thoses guys did a awesome job and it looks very professional and they touched a couple more spots I will go back there thanks to all you guys</div>
+                </div>
+
+                <div class="review-card hidden" data-group="2">
+                    <div class="review-header">
+                        <span class="reviewer-name">Jean Quary</span>
+                        <span class="stars">★★★★★</span>
+                    </div>
+                    <div class="review-time">2 years ago</div>
+                    <div class="review-body">The guys are good. I ask about the Jeep. Glad when they done.</div>
+                </div>
+
+                <div class="review-card hidden" data-group="2">
+                    <div class="review-header">
+                        <span class="reviewer-name">Hailey White</span>
+                        <span class="stars">★★★★★</span>
+                    </div>
+                    <div class="review-time">2 years ago</div>
+                    <div class="review-body">Very sweet and affordable got my vehicle done quickly</div>
+                </div>
+
+                <div class="review-card hidden" data-group="2">
+                    <div class="review-header">
+                        <span class="reviewer-name">Tracy Dutcher</span>
+                        <span class="stars">★★★★★</span>
+                    </div>
+                    <div class="review-time">a year ago</div>
+                    <div class="review-body">Dennis/Jason and crew do excellent work.</div>
+                </div>
+
+                <div class="review-card hidden" data-group="2">
+                    <div class="review-header">
+                        <span class="reviewer-name">Mary Trail</span>
+                        <span class="stars">★★★★★</span>
+                    </div>
+                    <div class="review-time">2 years ago</div>
+                    <div class="review-body">D & R go above and beyond your expectations to help with anything you need.</div>
+                </div>
+
+                <div class="review-card hidden" data-group="2">
+                    <div class="review-header">
+                        <span class="reviewer-name">Kirstie McKelroy</span>
+                        <span class="stars">★★★★★</span>
+                    </div>
+                    <div class="review-time">3 years ago</div>
+                    <div class="review-body">Great people, always go above and beyond!</div>
+                </div>
+
+                <div class="review-card hidden" data-group="2">
+                    <div class="review-header">
+                        <span class="reviewer-name">DM Tom</span>
+                        <span class="stars">★★★★★</span>
+                    </div>
+                    <div class="review-time">7 years ago</div>
+                    <div class="review-body">Good people reasonable $$</div>
+                </div>
+
+                <div class="review-card hidden" data-group="3">
+                    <div class="review-header">
+                        <span class="reviewer-name">Andre Walker</span>
+                        <span class="stars">★★★★★</span>
+                    </div>
+                    <div class="review-time">3 years ago</div>
+                    <div class="review-body"></div>
+                </div>
+
+                <div class="review-card hidden" data-group="3">
+                    <div class="review-header">
+                        <span class="reviewer-name">Wilma Schilling</span>
+                        <span class="stars">★★★★★</span>
+                    </div>
+                    <div class="review-time">4 years ago</div>
+                    <div class="review-body">Positive: Punctuality, Quality, Professionalism, Value</div>
+                </div>
+
+                <div class="review-card hidden" data-group="3">
+                    <div class="review-header">
+                        <span class="reviewer-name">Tiphani Cook</span>
+                        <span class="stars">★★★★★</span>
+                    </div>
+                    <div class="review-time">5 years ago</div>
+                    <div class="review-body">Positive: Punctuality, Quality, Professionalism, Value</div>
+                </div>
+
+                <div class="review-card hidden" data-group="3">
+                    <div class="review-header">
+                        <span class="reviewer-name">Your-Last-Call</span>
+                        <span class="stars">★★★★★</span>
+                    </div>
+                    <div class="review-time">2 years ago</div>
+                    <div class="review-body"></div>
+                </div>
+
+                <div class="review-card hidden" data-group="3">
+                    <div class="review-header">
+                        <span class="reviewer-name">Ronda States</span>
+                        <span class="stars">★★★★★</span>
+                    </div>
+                    <div class="review-time">3 years ago</div>
+                    <div class="review-body"></div>
+                </div>
+
+                <div class="review-card hidden" data-group="3">
+                    <div class="review-header">
+                        <span class="reviewer-name">Dannah Johnson</span>
+                        <span class="stars">★★★★★</span>
+                    </div>
+                    <div class="review-time">3 years ago</div>
+                    <div class="review-body"></div>
+                </div>
+
+                <div class="review-card hidden" data-group="4">
+                    <div class="review-header">
+                        <span class="reviewer-name">David Chronister</span>
+                        <span class="stars">★★★★★</span>
+                    </div>
+                    <div class="review-time">3 years ago</div>
+                    <div class="review-body"></div>
+                </div>
+
+                <div class="review-card hidden" data-group="4">
+                    <div class="review-header">
+                        <span class="reviewer-name">Russell Lupton</span>
+                        <span class="stars">★★★★★</span>
+                    </div>
+                    <div class="review-time">4 years ago</div>
+                    <div class="review-body"></div>
+                </div>
+
+                <div class="review-card hidden" data-group="4">
+                    <div class="review-header">
+                        <span class="reviewer-name">SuperSlow MR2</span>
+                        <span class="stars">★★★★★</span>
+                    </div>
+                    <div class="review-time">5 years ago</div>
+                    <div class="review-body"></div>
+                </div>
+
+                <div class="review-card hidden" data-group="4">
+                    <div class="review-header">
+                        <span class="reviewer-name">Gil Rutledge</span>
+                        <span class="stars">★★★★★</span>
+                    </div>
+                    <div class="review-time">6 years ago</div>
+                    <div class="review-body"></div>
+                </div>
+
+                <div class="review-card hidden" data-group="4">
+                    <div class="review-header">
+                        <span class="reviewer-name">Richard Pierce</span>
+                        <span class="stars">★★★★☆</span>
+                    </div>
+                    <div class="review-time">4 years ago</div>
+                    <div class="review-body">I dropped in for an estimate. I was treated well and quickly received what I had requested. I'll schedule repairs when they have an opening. At this point I don't know their quality of work, but they were highly recommend by a trusted source.</div>
+                </div>
+
+                <div class="review-card hidden" data-group="4">
+                    <div class="review-header">
+                        <span class="reviewer-name">Phillip Hall</span>
+                        <span class="stars">★★★★☆</span>
+                    </div>
+                    <div class="review-time">4 years ago</div>
+                    <div class="review-body"></div>
+                </div>
+
+                <div class="review-card hidden" data-group="5">
+                    <div class="review-header">
+                        <span class="reviewer-name">Carl Brown</span>
+                        <span class="stars">★★★☆☆</span>
+                    </div>
+                    <div class="review-time">3 years ago</div>
+                    <div class="review-body">Slow to get my vehicle fixed. I guess it's crazy everywhere.</div>
+                </div>
+
+                <div class="review-card hidden" data-group="5">
+                    <div class="review-header">
+                        <span class="reviewer-name">A P</span>
+                        <span class="stars">★★★☆☆</span>
+                    </div>
+                    <div class="review-time">4 years ago</div>
+                    <div class="review-body"></div>
+                </div>
+
+                <div class="review-card hidden" data-group="5">
+                    <div class="review-header">
+                        <span class="reviewer-name">Brice Prince</span>
+                        <span class="stars">★☆☆☆☆</span>
+                    </div>
+                    <div class="review-time">2 years ago</div>
+                    <div class="review-body">Took twice as long as they told me, and they didn't do what they said they were doing to take so long.said they were waiting on parts that were never installed</div>
+                </div>
+
+                <div class="review-card hidden" data-group="5">
+                    <div class="review-header">
+                        <span class="reviewer-name">Jessica Dawn</span>
+                        <span class="stars">★☆☆☆☆</span>
+                    </div>
+                    <div class="review-time">5 years ago</div>
+                    <div class="review-body">Front desk lady is very unprofessional and will just hang up in your face without saying anything. I hope you know she is messing up potential customers. Thank you.</div>
+                </div>
+
+                <div class="review-card hidden" data-group="5">
+                    <div class="review-header">
+                        <span class="reviewer-name">Gary Baucom</span>
+                        <span class="stars">★☆☆☆☆</span>
+                    </div>
+                    <div class="review-time">9 months ago</div>
+                    <div class="review-body"></div>
+                </div>
+
+                <div class="review-card hidden" data-group="5">
+                    <div class="review-header">
+                        <span class="reviewer-name">Jay McKin</span>
+                        <span class="stars">★☆☆☆☆</span>
+                    </div>
+                    <div class="review-time">a year ago</div>
+                    <div class="review-body"></div>
+                </div>
+
+                <button class="show-more-btn" id="showMoreBtn" onclick="showMoreReviews()">Show 6 More Reviews</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-grid">
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm" onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                    <div class="success-message" id="successMessage">
+                        Thank you for your message! We'll get back to you soon.
+                    </div>
+                </div>
+
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <div class="info-item">
+                        <strong>📍 Address</strong>
+                        43002 E MacArthur St<br>
+                        Shawnee, OK 74804
+                    </div>
+                    <div class="info-item">
+                        <strong>📞 Phone</strong>
+                        <a href="tel:+14058789700">(405) 878-9700</a>
+                    </div>
+                    <div class="info-item">
+                        <strong>⏰ Hours</strong>
+                        Monday - Friday: 8:00 AM – 5:00 PM<br>
+                        Saturday - Sunday: Closed
+                    </div>
+                    <div class="info-item">
+                        <strong>✉️ Email</strong>
+                        <a href="mailto:info@drbodyshop.com">info@drbodyshop.com</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Square Payment Form Integration -->
+            <div id="square-payment-form">
+                <h3>💳 Request an Estimate or Make a Payment</h3>
+                <p>Contact us to set up online payments through Square.</p>
+                <!-- 
+                    SQUARE PAYMENT INTEGRATION:
+                    Replace YOUR_LOCATION_ID below with your actual Square Location ID
+                    To integrate Square payments:
+                    1. Sign up at https://squareup.com/
+                    2. Get your Location ID from Square Dashboard
+                    3. Replace YOUR_LOCATION_ID in the script below
+                    4. Uncomment the script section
+                -->
+                <!--
+                <script>
+                    const locationId = 'YOUR_LOCATION_ID'; // Replace with actual Square Location ID
+                    // Add Square payment integration code here
+                </script>
+                -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Location/Map Section -->
+    <section id="location">
+        <div class="container">
+            <h2>Find Us</h2>
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3243.7778!2d-97.0454443!3d35.3622826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87b3b8716bbd7849%3A0xd30a7204dd9aa852!2sD%20%26%20R%20Body%20Shop!5e0!3m2!1sen!2sus!4v1234567890"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 D & R Body Shop. All Rights Reserved.</p>
+            <p>43002 E MacArthur St, Shawnee, OK 74804 | <a href="tel:+14058789700">(405) 878-9700</a></p>
+            <p>Proudly Serving Shawnee and Surrounding Areas for Over 30 Years</p>
+        </div>
+    </footer>
+
+    <script>
+        // Review Show More Functionality
+        let currentGroup = 0;
+        const totalGroups = 5;
+
+        function showMoreReviews() {
+            currentGroup++;
+            
+            // Show reviews in current group
+            const reviewsToShow = document.querySelectorAll(`[data-group="${currentGroup}"]`);
+            reviewsToShow.forEach(review => {
+                review.classList.remove('hidden');
+            });
+
+            // Calculate remaining reviews
+            let remainingReviews = 0;
+            for (let i = currentGroup + 1; i <= totalGroups; i++) {
+                remainingReviews += document.querySelectorAll(`[data-group="${i}"]`).length;
+            }
+
+            // Update button text or hide it
+            const btn = document.getElementById('showMoreBtn');
+            if (remainingReviews > 0) {
+                const nextBatchCount = Math.min(6, remainingReviews);
+                btn.textContent = `Show ${nextBatchCount} More Review${nextBatchCount !== 1 ? 's' : ''} (${remainingReviews} total)`;
+            } else {
+                btn.style.display = 'none';
+            }
+        }
+
+        // Contact Form Handling
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            // Get form data
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                message: document.getElementById('message').value
+            };
+
+            // Here you would typically send the data to your server
+            // For now, we'll just show a success message
+            console.log('Form submitted:', formData);
+
+            // Show success message
+            const successMsg = document.getElementById('successMessage');
+            successMsg.classList.add('show');
+
+            // Reset form
+            document.getElementById('contactForm').reset();
+
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                successMsg.classList.remove('show');
+            }, 5000);
+
+            // In production, you'd send this to your email service:
+            /*
+            fetch('your-email-handler.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+            */
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Initialize review button text
+        window.addEventListener('DOMContentLoaded', () => {
+            const group1Reviews = document.querySelectorAll('[data-group="1"]').length;
+            const totalHiddenReviews = document.querySelectorAll('.review-card.hidden').length;
+            const btn = document.getElementById('showMoreBtn');
+            const nextBatchCount = Math.min(6, totalHiddenReviews);
+            btn.textContent = `Show ${nextBatchCount} More Review${nextBatchCount !== 1 ? 's' : ''} (${totalHiddenReviews} total)`;
+        });
+    </script>
+</body>
+</html>
